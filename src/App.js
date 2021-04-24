@@ -10,6 +10,9 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div className="App">
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+        </style>
           <Main />
         </div>
       </BrowserRouter>
