@@ -8,7 +8,7 @@ import { CARDIMAGES } from '../shared/cardimages';
 
 function RenderImage() {
     return (
-        <div className='container'>
+        <div className='container home_image'>
             <Card inverse>
                 <CardImg top width='100%' src='/assets/images/soccer.jpg' alt='National Youth Sports Nevada'/>
             </Card>
@@ -19,20 +19,24 @@ function RenderImage() {
 function RenderCard() {
     return (
         <div className="container">
-            <Card>
-                <CardImg className='homeimage' width='50%' src='assets/images/logo.png' />
-                <CardBody>
-                    <CardTitle tag='h4'>Welcome to National Youth Sports Nevada</CardTitle>
-                    <CardText>
-                    <p className = 'welcome-paragraph'>Give your child the gift of sports.  Create lasting memories 
-                    while watching your child set the foundations they'll carry with them for the rest of their lives.  At NYS,
-                    we believe your childs growth is paramount.  And with leagues from Beginner to All-Star, there's a place
-                    for everyone.  So from ages young to old, lace them up and get out and compete.  We  can growth
-                    with you child and help equip them with the skills needed in life. Instill in your kids a will to
-                    succeed in a supportive and safe environment.<strong> NYS, Where Kid's Have a Ball.</strong></p>
-                    </CardText>
-                </CardBody>
-            </Card>
+            <div className="row mb-5">          
+                <Card className='home_card mt-5'>
+                    <div>
+                        <CardImg width='100%' className='card_image' src='/assets/images/logo.png'></CardImg>
+                    </div>
+                    <CardBody>
+                        
+                        <CardText>
+                        <p className = 'welcome_paragraph'>Give your child the gift of sports.  Create lasting memories 
+                        while watching your child set the foundations they'll carry with them for the rest of their lives.  At NYS,
+                        we believe your childs growth is paramount.  And with leagues from Beginner to All-Star, there's a place
+                        for everyone.  So from ages young to old, lace them up and get out and compete.  We  can growth
+                        with you child and help equip them with the skills needed in life. Instill in your kids a will to
+                        succeed in a supportive and safe environment.<strong> NYS, Where Kid's Have a Ball.</strong></p>
+                        </CardText>
+                    </CardBody>
+                </Card>
+            </div>  
         </div>
     )
 }
