@@ -9,7 +9,7 @@ import { CARDIMAGES } from '../shared/cardimages';
 function RenderImage() {
     return (
         <div className='container home_image'>
-            <Card inverse>
+            <Card className='mr-2'>
                 <CardImg top width='100%' src='/assets/images/soccer.jpg' alt='National Youth Sports Nevada'/>
             </Card>
         </div>
@@ -20,7 +20,7 @@ function RenderCard() {
     return (
         <div className="container">
             <div className="row mb-5">          
-                <Card className='home_card mt-5'>
+                <Card className='home_card mt-5 ml-2'>
                     <div>
                         <CardImg width='100%' className='card_image' src='/assets/images/logo.png'></CardImg>
                     </div>

@@ -5,9 +5,12 @@ import Header from './HeaderComponent';
 import Home from './HomeComponent';
 import Footer from './FooterComponent';
 import Sport from './SportComponent';
+import Baseball from './BaseballComponent';
+import CardLaunch from './CardLaunchComponent';
+import { SPORTSCARDS } from '../shared/sportscards';
+import { BASEBALLINFO } from '../shared/baseballleagueinfo';
 
 
-import { SPORTSCARDS } from '../shared/sportcards';
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom'; 
 
 
@@ -15,13 +18,22 @@ class Main extends Component {
     constructor(props){
         super(props);
         this.state = {
-           sportscards: SPORTSCARDS
+           
         }
     }
 
     render() {
 
         const HomePage = () => <Home />
+
+        // const SportsWithId = ({match}) => {
+        //     return(
+        //         <CardLaunch sportscard={this.state.sportscard.filter(sportscard => sportscard.id === 
+        //             +match.params.sportId)[0]}/>
+                           
+        //     )
+            
+        // }
 
        
 
@@ -30,8 +42,8 @@ class Main extends Component {
                 <Header />
                     <Switch>
                         <Route path='/home' component={HomePage} />
-                        <Route exact path='/sport' render={()=><Sport sportscards={this.state.sportscards} />} />
-                        <Redirect to='/home' />
+                        <Route exact path='/sport' component={Sport} />
+                        <Route exact path='/Baseball' component={Baseball} />
                     </Switch>
                 <Footer />
             </div>
