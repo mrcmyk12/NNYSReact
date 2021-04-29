@@ -6,6 +6,7 @@ import Home from './HomeComponent';
 import Footer from './FooterComponent';
 import Sport from './SportComponent';
 import Baseball from './BaseballComponent';
+import Football from './FootballComponent';
 import CardLaunch from './CardLaunchComponent';
 import { SPORTSCARDS } from '../shared/sportscards';
 import { BASEBALLINFO } from '../shared/baseballleagueinfo';
@@ -44,6 +45,7 @@ class Main extends Component {
                         <Route path='/home' component={HomePage} />
                         <Route exact path='/sport' component={Sport} />
                         <Route exact path='/Baseball' component={Baseball} />
+                        <Route exact path='/Tackle_Football' component={Football} />
                     </Switch>
                 <Footer />
             </div>

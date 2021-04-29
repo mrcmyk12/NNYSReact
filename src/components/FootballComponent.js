@@ -4,19 +4,19 @@ import { Card, CardTitle, CardImg, CardHeader, CardFooter,
     Modal, ModalHeader, ModalBody, Form, FormGroup, 
     Input, Label, CardBody, Button, Col, Row } from 'reactstrap';
 import CardImgOverlay from 'reactstrap/lib/CardImgOverlay';
-import { BASEBALLINFO } from '../shared/baseballleagueinfo';
+import { FOOTBALLINFO } from '../shared/footballleagueinfo'
 
 import { MONTH, DAY } from '../shared/month';
 
 
-class Baseball extends Component {
+class Football extends Component {
 
     constructor(props) {
         super(props);
 
         this.state = {
             
-            baseballs:BASEBALLINFO,
+            footballs: FOOTBALLINFO,
             isModalOpen: false,
             month: MONTH,
           
@@ -43,16 +43,16 @@ class Baseball extends Component {
             
         
 
-        const base = this.state.baseballs.map(baseball => {
+        const base = this.state.footballs.map(football => {
             return(
                     <React.Fragment>                      
                             <Card className='sport_card m-2'>
-                            <CardTitle ><h2 className='sport_card_title mt-1 ml-2'>{baseball.name}</h2></CardTitle>
+                            <CardTitle ><h2 className='sport_card_title mt-1 ml-2'>{football.name}</h2></CardTitle>
                                 <div className='row'>
                                 <div className='col-5 mb-2 mt-2 ml-2'>
-                                    <CardImg className='image_for_sport'src={baseball.image}></CardImg>                                    
+                                    <CardImg className='image_for_sport'src={football.image}></CardImg>                                    
                                     <CardBody className='body_description'>
-                                        {baseball.description}
+                                        {football.description}
                                         <Card className='mt-5'>                                    
                                             <Button className='register_button' onClick={this.toggleModal}>
                                         Sign-Up</Button> 
@@ -62,24 +62,19 @@ class Baseball extends Component {
                                  <div className="col-5 mt-2 mb-2">
                                  <h5 className='rules_title'>Registration Includes</h5>
                                  <hr/>
-                                    {baseball.registration.map(registration => 
+                                    {football.registration.map(registration => 
                                     <li className='rules_list'>
                                         {registration}                           
                                     </li>)}  
                                     <hr/>  
                                     <h5 className='rules_title'>Required Equipment</h5>
                                     <hr/>
-                                    {baseball.requiredeq.map(eq => 
+                                    {football.equipment.map(eq => 
                                     <li className='rules_list'>
                                         {eq}                           
                                     </li>)}
                                     <hr/>
-                                    <h5 className='rules_title'>Rules</h5>
-                                    <hr/>
-                                    {baseball.rules.map(rules => 
-                                    <li className='rules_list'>                     
-                                        {rules} 
-                                    </li>)}
+                                    
                                 </div>
                                 </div>
                             </Card>                                                
@@ -271,4 +266,4 @@ class Baseball extends Component {
     }
 }
 
-export default Baseball;
+export default Football;

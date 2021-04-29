@@ -1,5 +1,6 @@
 
 
+
 .App {
   text-align: center;
 }
@@ -22,6 +23,7 @@
   box-sizing: border-box;
   box-shadow: 7px 8px 4px 2px rgba(0, 0, 0, 0.25);
   border-radius: 7px;
+
 }
 .login_button{
   font-family: Montserrat;
@@ -88,6 +90,7 @@ background: #9E3039;
 
 .sport_card{
   filter: drop-shadow(7px 8px 4px rgba(0, 0, 0, 0.25));
+
 }
 
 .sport_button{
@@ -96,17 +99,17 @@ background: #9E3039;
 }
 
 .sport_card_title{
-  color: white;
-  background-color:rgba(0, 0, 0, 0.25);
+  color:#9E3039;
   font-family: Montserrat;
   font-weight: 700;
   text-align: initial;
-  filter: drop-shadow(7px 8px 4px rgba(0, 0, 0, 0.25));
 }
 
 .rules_title{
+  font-family: Montserrat;
   color: #9E3039;
-  text-align: initial;
+  text-align: center;
+  font-weight: bold;
 }
 .rules_paragraph{
   font-family: Hind Madurai;
@@ -114,10 +117,37 @@ background: #9E3039;
 }
 .rules_list{
   font-family: Hind Madurai;
-  text-align: initial;
+  text-align: center;
   list-style-type: none; 
 }
 
 .body_description{
   font-family: Hind Madurai;
+  z-index: -1;
+}
+
+.form_title{
+  color: #9E3039;
+  font-family: Montserrat;
+  text-align: initial;
+}
+
+.cancel_button{
+  font-family: Montserrat;
+  font-weight: 700;
+  background: grey;
+  border: 1px solid white;
+  box-sizing: border-box;
+  box-shadow: 7px 8px 4px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+}
+.submit_button{
+  font-family: Montserrat;
+  font-weight: 700;
+  background: #9E3039;
+  border: 1px solid #9E3039;
+  box-sizing: border-box;
+  box-shadow: 7px 8px 4px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 7px;
+ 
 }

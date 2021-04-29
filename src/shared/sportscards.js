@@ -63,7 +63,7 @@ export const SPORTSCARDS = [
     },
     {
         id: 5,
-        name: 'Tackle Football',
+        name: 'Tackle_Football',
         image: 'assets/images/tackle_football.jpg'
     },
     {
