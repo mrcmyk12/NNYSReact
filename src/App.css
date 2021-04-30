@@ -151,3 +151,25 @@ background: #9E3039;
   border-radius: 7px;
  
 }
+
+.schedule_card{
+  height: 300px;
+  filter: drop-shadow(7px 8px 4px rgba(0, 0, 0, 0.25)); 
+}
+
+.schedule_card_title{
+  color:#9E3039;
+  font-family: Montserrat;
+  font-weight: 700;
+}
+
+.calendar_day_text{
+  font-size: 10px;
+  font-family: Hind Madurai;
+  color: black;
+  font-weight: 600;
+}
+
+.center_text{
+  justify-content: center;
+}

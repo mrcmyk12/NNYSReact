@@ -28,14 +28,16 @@ class Sport extends Component {
         const sport = this.state.sportscards.map(sportscard => {
             return(
                     <React.Fragment>
-                        <div className='col-md-2'>
+                           
+                        <div className='col'>
                             <Link to={`/${sportscard.name}`}>
-                            <Card key={sportscard.id} className='sport_card mb-2'>
+                            <Card key={sportscard.id} className='sport_card mb-2 m-1'>
                                     <CardImg className='sport_card_image'src= {sportscard.image}></CardImg>
                             </Card>
-                            <h5 className='card_title'>{sportscard.name}</h5>
+                            <h5 className='card_title mb-5'>{sportscard.name}</h5>
                             </Link>
                         </div>
+                        
                     </React.Fragment>
             )
         })
