@@ -13,6 +13,7 @@ import Cheerleader from './CheerleadingComponent';
 import FlagFootball from './FlagFootballComponent';
 import Volleyball from './VolleyballComponent';
 import Schedule from './ScheduleComponent';
+import Order from './UniformComponent';
 import CardLaunch from './CardLaunchComponent';
 import { SPORTSCARDS } from '../shared/sportscards';
 import { BASEBALLINFO } from '../shared/baseballleagueinfo';
@@ -56,8 +57,9 @@ class Main extends Component {
                         <Route exact path='/Basketball' component={Basketball} />
                         <Route exact path='/Cheerleading' component={Cheerleader} />
                         <Route exact path='/Flag-Football' component={FlagFootball} />
-                        <Route exact path='/Flag-Football' component={FlagFootball} />
+                        <Route exact path='/Volleyball' component={Volleyball} />
                         <Route exact path='/schedule' component={Schedule} />
+                        <Route exact path='/order' component={Order} />
                         <Redirect to='/home' />
                     </Switch>
                 <Footer />

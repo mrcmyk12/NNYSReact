@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Nav, NavbarToggler, Collapse, NavItem, Navbar, Button} from 'reactstrap';
 import { NavLink } from 'react-router-dom';
+import Register from './RegisterComponent';
+import Login from './LoginComponent';
 
 class Header extends Component {
     constructor (props) {
@@ -44,21 +46,17 @@ class Header extends Component {
                                         </NavLink>
                                     </NavItem>
                                     <NavItem>
-                                        <NavLink className="nav-link" to='/home'>
+                                        <NavLink className="nav-link" to='/order'>
                                             <h5 className='nav-listing'>Order</h5>
                                         </NavLink>
                                     </NavItem>
-                                    <NavItem>
-                                        <NavLink className="nav-link" to='/home'>
-                                            <Button className='register_button' >Register</Button>
-                                        </NavLink>
+                                    <NavItem className='nav_link'>
+
+                                            <Register />
+
                                     </NavItem>
-                                    <NavItem>
-                                        <NavLink className="nav-link" to='/home'>
-                                            <div className="">
-                                            <Button className='login_button'>Login</Button>
-                                            </div>
-                                        </NavLink>
+                                    <NavItem className='nav_link'>
+                                           <Login />
                                     </NavItem>
                                 </Nav>
                             </div>

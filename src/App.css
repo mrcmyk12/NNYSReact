@@ -173,3 +173,15 @@ background: #9E3039;
 .center_text{
   justify-content: center;
 }
+
+.uniform_images{
+  width: 250px;
+  z-index: -1;
+}
+
+.uniform_price{
+  color:#9E3039;
+  font-family: Montserrat;
+  font-weight: 700;
+  z-index: 100;
+}

@@ -27,8 +27,7 @@ class Sport extends Component {
 
         const sport = this.state.sportscards.map(sportscard => {
             return(
-                    <React.Fragment>
-                           
+                    <React.Fragment>      
                         <div className='col'>
                             <Link to={`/${sportscard.name}`}>
                             <Card key={sportscard.id} className='sport_card mb-2 m-1'>
@@ -36,8 +35,7 @@ class Sport extends Component {
                             </Card>
                             <h5 className='card_title mb-5'>{sportscard.name}</h5>
                             </Link>
-                        </div>
-                        
+                        </div>    
                     </React.Fragment>
             )
         })
