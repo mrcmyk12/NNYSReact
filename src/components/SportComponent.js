@@ -3,8 +3,17 @@ import React, { Component } from 'react';
 import { Card, CardImg, CardFooter, CardTitle, Button, Modal, ModalHeader, ModalBody } from 'reactstrap';
 
 import { SPORTSCARDS } from '../shared/sportscards';
-
+import { bounceInLeft } from 'react-animations';
+import Radium, {StyleRoot} from 'radium';
 import { Link } from 'react-router-dom';
+
+const styles = {
+    bounceInLeft: {
+      animation: 'x 2s',
+      animationName: Radium.keyframes(bounceInLeft, 'bounceInLeft')
+    }
+  }
+  
 
 
 class Sport extends Component {
@@ -27,7 +36,8 @@ class Sport extends Component {
 
         const sport = this.state.sportscards.map(sportscard => {
             return(
-                    <React.Fragment>      
+                
+     
                         <div className='col'>
                             <Link to={`/${sportscard.name}`}>
                             <Card key={sportscard.id} className='sport_card mb-2 m-1'>
@@ -36,15 +46,17 @@ class Sport extends Component {
                             <h5 className='card_title mb-5'>{sportscard.name}</h5>
                             </Link>
                         </div>    
-                    </React.Fragment>
+
+                
             )
         })
 
         return (
+        <StyleRoot style={styles.bounceInLeft}>       
             <div className='row'>
                 {sport}
             </div>        
-            
+        </StyleRoot> 
         )
     }
 }

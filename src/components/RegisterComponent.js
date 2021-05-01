@@ -12,7 +12,9 @@ function Register(){
 
 
     return(
+        
         <React.Fragment>
+
             <Button onClick={toggle} className='m-2 register_button'>Create Account</Button>
                 <Modal isOpen={modal} toggle={toggle}>
                     <ModalBody>

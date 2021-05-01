@@ -14,13 +14,22 @@ import FlagFootball from './FlagFootballComponent';
 import Volleyball from './VolleyballComponent';
 import Schedule from './ScheduleComponent';
 import Order from './UniformComponent';
+
 import CardLaunch from './CardLaunchComponent';
 import { SPORTSCARDS } from '../shared/sportscards';
 import { BASEBALLINFO } from '../shared/baseballleagueinfo';
+import { slideInDown } from 'react-animations';
+import Radium, { StyleRoot } from 'radium';
 
 
 import { Switch, Route, Redirect, withRouter } from 'react-router-dom'; 
 
+const styles = {
+    slideInDown: {
+      animation: 'x 1s',
+      animationName: Radium.keyframes(slideInDown, 'slideInDown')
+    }
+  }
 
 class Main extends Component {
     constructor(props){
@@ -46,6 +55,7 @@ class Main extends Component {
        
 
         return(
+        <StyleRoot>
             <div>
                 <Header />
                     <Switch>
@@ -64,6 +74,7 @@ class Main extends Component {
                     </Switch>
                 <Footer />
             </div>
+        </StyleRoot>
         )
     }
 }

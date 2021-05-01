@@ -3,6 +3,16 @@ import { Nav, NavbarToggler, Collapse, NavItem, Navbar, Button} from 'reactstrap
 import { NavLink } from 'react-router-dom';
 import Register from './RegisterComponent';
 import Login from './LoginComponent';
+import { slideInDown } from 'react-animations';
+import Radium, { StyleRoot } from 'radium';
+
+const styles = {
+    slideInDown: {
+      animation: 'x 1s',
+      animationName: Radium.keyframes(slideInDown, 'slideInDown')
+    }
+  }
+  
 
 class Header extends Component {
     constructor (props) {
@@ -22,15 +32,16 @@ class Header extends Component {
 
     render() {
         return(
-            
-            <Navbar sticky='top' expand='md'>
+        <StyleRoot navbar style={styles.slideInDown}>
+            <div>
+            <Navbar sticky='top' expand='md' >
                 <div className="container flex-container">
                     <NavbarToggler onClick={ this.togglerNav } />
                     <Collapse isOpen={this.state.isNavOpen} navbar>
                         <>
                             <div className="flex-container">
-                                <Nav navbar>
-                                    <NavItem>
+                                <Nav >
+                                    <NavItem >
                                         <NavLink className="nav-link" to='/home'>
                                             <h5 className='nav-listing'>Home</h5>
                                         </NavLink>
@@ -64,6 +75,8 @@ class Header extends Component {
                     </Collapse>
                 </div>
             </Navbar>
+            </div>
+        </StyleRoot>
         )
     }
 }

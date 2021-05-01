@@ -1,63 +1,141 @@
-import React, {Component} from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle } from 'reactstrap';
-import CardImgOverlay from 'reactstrap/lib/CardImgOverlay';
+import React, {Component, useState} from 'react';
+import { Card, CardImg, CardText, CardBody, CardTitle, Carousel, 
+CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from 'reactstrap';
+import { slideInRight, slideInDown, fadeInDownBig } from 'react-animations';
 
-import { CARDIMAGES } from '../shared/cardimages';
+import Radium, { StyleRoot } from 'radium';
+import { isReactRefObj } from 'reactstrap/lib/utils';
 
-
-
-function RenderImage() {
-    return (
-        <div className='container home_image'>
-            <Card className='mr-2'>
-                <CardImg top width='100%' src='/assets/images/soccer.jpg' alt='National Youth Sports Nevada'/>
-            </Card>
-        </div>
-    )
+const styles = {
+  slideInDown: {
+    animation: 'x 1s',
+    animationName: Radium.keyframes(slideInDown, 'slideInDown')
+  },
+  slideInRight: {
+    animation:'x 1s',
+    animationName: Radium.keyframes(slideInRight, 'slideInRight')
+  },
+  fadeInDownBig:{
+    animation:'x 3s',
+    animationName:Radium.keyframes(fadeInDownBig,'fadeInDownBig')
+  }
 }
 
-function RenderCard() {
-    return (
-        <div className="container">
-            <div className="row mb-5">          
-                <Card className='home_card mt-5 ml-2'>
-                    <div>
-                        <CardImg width='100%' className='card_image' src='/assets/images/logo.png'></CardImg>
-                    </div>
-                    <CardBody>
-                        
-                        <CardText>
-                        <p className = 'welcome_paragraph'>Give your child the gift of sports.  Create lasting memories 
-                        while watching your child set the foundations they'll carry with them for the rest of their lives.  At NYS,
-                        we believe your childs growth is paramount.  And with leagues from Beginner to All-Star, there's a place
-                        for everyone.  So from ages young to old, lace them up and get out and compete.  We  can growth
-                        with you child and help equip them with the skills needed in life. Instill in your kids a will to
-                        succeed in a supportive and safe environment.<strong> NYS, Where Kid's Have a Ball.</strong></p>
-                        </CardText>
-                    </CardBody>
-                </Card>
-            </div>  
-        </div>
-    )
+function RenderParagraph() {
+  return(
+    <StyleRoot style={styles.fadeInDownBig}>
+      <div className='col'>
+      <div>
+          <CardImg width='100%' className='card_image' src='/assets/images/logo.png'></CardImg>
+      </div>
+          <p className = 'welcome_paragraph'>Give your child the gift of sports.  Create lasting memories 
+          while watching your child set the foundations they'll carry with them for the rest of their lives.  At NYS,
+          we believe your childs growth is paramount.  And with leagues from Beginner to All-Star, there's a place
+          for everyone.  So from ages young to old, lace them up and get out and compete.  We  can growth
+          with you child and help equip them with the skills needed in life. Instill in your kids a will to
+          succeed in a supportive and safe environment.<strong> NYS, Where Kid's Have a Ball.</strong></p>
+      </div>  
+    </StyleRoot>
+  )
 }
 
-class Home extends Component {
 
+const items = [
+    {
+      src: '/assets/images/baseball.png',
+      altText: 'Slide 1',
+      caption: 'Baseball'
+    },
+    {
+        src: '/assets/images/basketball.png',
+        altText: 'Slide 1',
+        caption: 'Basketball'
+    },
+    {
+        src: '/assets/images/cheerleading.jpg',
+        altText: 'Slide 1',
+        caption: 'Cheerleading'
+    },
+    {
+        src: '/assets/images/flag_football.jpg',
+        altText: 'Slide 1',
+        caption: 'Flag Football'
+    },
+    {
+        src: '/assets/images/soccer.jpg',
+        altText: 'Slide 1',
+        caption: 'Soccer'
+    },
+    {
+        src: '/assets/images/tackle_football.jpg',
+        altText: 'Slide 1',
+        caption: 'Tackle Football'
+    },
+    {
+        src: '/assets/images/volleyball.png',
+        altText: 'Slide 1',
+        caption: 'Volleyball'
+    },
+    
 
-    render () {
-        return (
-            <div className="container img-container">
-                <div className="row">
-                    <div className="col-sm-4">
-                        <RenderImage /> 
-                    </div>
-                    <div className="col-sm-8">
-                        <RenderCard />
-                    </div>
-                </div>
-            </div>
-        )
+  ];
+  
+  const Home = (props) => {
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [animating, setAnimating] = useState(false);
+  
+    const next = () => {
+      if (animating) return;
+      const nextIndex = activeIndex === items.length - 1 ? 0 : activeIndex + 1;
+      setActiveIndex(nextIndex);
     }
-}
-
-export default Home;
+  
+    const previous = () => {
+      if (animating) return;
+      const nextIndex = activeIndex === 0 ? items.length - 1 : activeIndex - 1;
+      setActiveIndex(nextIndex);
+    }
+  
+    const goToIndex = (newIndex) => {
+      if (animating) return;
+      setActiveIndex(newIndex);
+    }
+  
+    const slides = items.map((item) => {
+      return (
+        <CarouselItem
+          onExiting={() => setAnimating(true)}
+          onExited={() => setAnimating(false)}
+          key={item.src}
+        >
+          <img src={item.src} alt={item.altText} />
+          <CarouselCaption className='carousel_title' captionHeader={item.caption} />
+        </CarouselItem>
+      );
+    });
+  
+    return (
+    <React.Fragment>
+      <Card>
+        <CardBody>
+            <div className="col" >
+            <Carousel 
+                activeIndex={activeIndex}
+                next={next}
+                previous={previous}
+            >
+                <CarouselIndicators items={items} activeIndex={activeIndex} onClickHandler={goToIndex} />
+                {slides}
+                <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
+                <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
+            </Carousel>
+            </div> 
+            <RenderParagraph />
+        </CardBody>       
+    </Card>
+</React.Fragment>
+      
+    );
+  }
+  
+  export default Home;

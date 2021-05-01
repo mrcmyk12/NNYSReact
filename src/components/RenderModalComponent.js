@@ -8,8 +8,18 @@ import { UNIFORM } from '../shared/orderinfo';
 function RenderModal(props) {
 
     const [modal, setModal ] = useState(false);
+    const [nestedModal,setNestedModal] = useState(false);
+    const [closeAll, setCloseAll] = useState(false);
 
     const toggle = () => setModal(!modal);
+    const toggleNested = () => {
+        setNestedModal(!nestedModal);
+        setCloseAll(false);
+    }
+    const toggleAll = () => {
+        setNestedModal(!nestedModal);
+        setCloseAll(true);
+    }
 
     return(
         <React.Fragment>
@@ -17,6 +27,7 @@ function RenderModal(props) {
                 Order
             </Button>
             <Modal size='sm' isOpen={modal} toggle={toggle}>
+            <ModalHeader toggle={toggle}></ModalHeader>
                 <Card>   
                     <div className="col">
                         <CardImg top className='uniform_images' src={props.uniform.image} />
@@ -36,7 +47,7 @@ function RenderModal(props) {
                                </Input>
                            </FormGroup> 
                         </Form>
-                        <Button onClick={toggle} className='register_button'>Add To Cart</Button>
+                        <Button onClick={toggleNested} className='register_button'>Add To Cart</Button>
                     </CardBody>
                 </Card> 
             </Modal>

@@ -185,3 +185,10 @@ background: #9E3039;
   font-weight: 700;
   z-index: 100;
 }
+
+.carousel_title{
+  font-family: Hind Madurai;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+}

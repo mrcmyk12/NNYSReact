@@ -1,16 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { zoomInDown } from 'react-animations';
+import Radium, {StyleRoot} from 'radium';
+
+const styles = {
+    zoomInDown: {
+      animation: 'x 2s',
+      animationName: Radium.keyframes(zoomInDown, 'zoomInDown')
+    }
+  }
 
 function Footer(props) {
     return(
-        
+    <StyleRoot style={styles.zoomInDown}>
         <footer className='site-footer'>
             <div className="container">
                 <div className="row mt-5">
                     <div className="col-2 text-wrap ml-5">
                         <ul className="list-unstyled ">
                             <li><Link to ='/home' className='footer_contact2'>Home</Link></li>
-                            <li><Link to ='/sports' className='footer_contact2'>Sports</Link></li>
+                            <li><Link to ='/sport' className='footer_contact2'>Sports</Link></li>
                             <li><Link to ='/schedule'className='footer_contact2'>Schedule</Link></li>
                             <li><Link to ='/order' className='footer_contact2'>Order</Link></li>
                         </ul>
@@ -29,6 +38,7 @@ function Footer(props) {
             </div>
 
         </footer>
+    </StyleRoot>
     )
 }
 
