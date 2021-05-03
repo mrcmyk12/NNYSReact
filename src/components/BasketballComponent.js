@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 
-import { Card, CardTitle, CardImg, CardHeader, CardFooter,
-    Modal, ModalHeader, ModalBody, Form, FormGroup, 
+import { Card, CardTitle, CardImg, Modal, ModalHeader, ModalBody, Form, FormGroup, 
     Input, Label, CardBody, Button, Col, Row } from 'reactstrap';
-import CardImgOverlay from 'reactstrap/lib/CardImgOverlay';
 import { BASKETBALLINFO } from '../shared/basketballleagueinfo'
 
-import { MONTH, DAY } from '../shared/month';
+import { MONTH } from '../shared/month';
 
 
 class Basketball extends Component {

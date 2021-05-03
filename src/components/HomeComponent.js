@@ -1,10 +1,10 @@
-import React, {Component, useState} from 'react';
-import { Card, CardImg, CardText, CardBody, CardTitle, Carousel, 
-CarouselItem, CarouselControl, CarouselIndicators, CarouselCaption } from 'reactstrap';
+import React, { useState } from 'react';
+import { Card, CardImg, CardBody, Carousel, CarouselItem, CarouselControl, 
+  CarouselIndicators, CarouselCaption } from 'reactstrap';
 import { slideInRight, slideInDown, fadeInDownBig } from 'react-animations';
 
 import Radium, { StyleRoot } from 'radium';
-import { isReactRefObj } from 'reactstrap/lib/utils';
+
 
 const styles = {
   slideInDown: {

@@ -1,25 +1,17 @@
 import React, { useState } from 'react';
-import { Button, Modal, ModalBody, ModalHeader, Card, CardBody, CardImg, CardImgOverlay,
+import { Button, Modal, ModalHeader, Card, CardBody, CardImg, CardImgOverlay,
  FormGroup, Form, Label, Input} from 'reactstrap';
 
-import { UNIFORM } from '../shared/orderinfo';
 
 
 function RenderModal(props) {
 
     const [modal, setModal ] = useState(false);
-    const [nestedModal,setNestedModal] = useState(false);
-    const [closeAll, setCloseAll] = useState(false);
+   
+
 
     const toggle = () => setModal(!modal);
-    const toggleNested = () => {
-        setNestedModal(!nestedModal);
-        setCloseAll(false);
-    }
-    const toggleAll = () => {
-        setNestedModal(!nestedModal);
-        setCloseAll(true);
-    }
+
 
     return(
         <React.Fragment>
@@ -47,7 +39,7 @@ function RenderModal(props) {
                                </Input>
                            </FormGroup> 
                         </Form>
-                        <Button onClick={toggleNested} className='register_button'>Add To Cart</Button>
+                        <Button onClick={toggle} className='register_button'>Add To Cart</Button>
                     </CardBody>
                 </Card> 
             </Modal>

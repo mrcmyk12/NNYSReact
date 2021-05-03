@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Card, CardImg, CardFooter, CardTitle, Button, Modal, ModalHeader, ModalBody } from 'reactstrap';
+import { Card, CardImg, } from 'reactstrap';
 
 import { SPORTSCARDS } from '../shared/sportscards';
 import { bounceInLeft } from 'react-animations';

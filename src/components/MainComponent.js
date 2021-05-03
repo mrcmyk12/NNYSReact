@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { CARDIMAGES } from '../shared/cardimages'
+
 import Header from './HeaderComponent';
 import Home from './HomeComponent';
 import Footer from './FooterComponent';
@@ -15,21 +15,9 @@ import Volleyball from './VolleyballComponent';
 import Schedule from './ScheduleComponent';
 import Order from './UniformComponent';
 
-import CardLaunch from './CardLaunchComponent';
-import { SPORTSCARDS } from '../shared/sportscards';
-import { BASEBALLINFO } from '../shared/baseballleagueinfo';
-import { slideInDown } from 'react-animations';
-import Radium, { StyleRoot } from 'radium';
 
+import { Switch, Route, Redirect, } from 'react-router-dom'; 
 
-import { Switch, Route, Redirect, withRouter } from 'react-router-dom'; 
-
-const styles = {
-    slideInDown: {
-      animation: 'x 1s',
-      animationName: Radium.keyframes(slideInDown, 'slideInDown')
-    }
-  }
 
 class Main extends Component {
     constructor(props){
@@ -43,19 +31,10 @@ class Main extends Component {
 
         const HomePage = () => <Home />
 
-        // const SportsWithId = ({match}) => {
-        //     return(
-        //         <CardLaunch sportscard={this.state.sportscard.filter(sportscard => sportscard.id === 
-        //             +match.params.sportId)[0]}/>
-                           
-        //     )
-            
-        // }
-
        
 
         return(
-        <StyleRoot>
+        <React.Fragment>
             <div>
                 <Header />
                     <Switch>
@@ -74,7 +53,7 @@ class Main extends Component {
                     </Switch>
                 <Footer />
             </div>
-        </StyleRoot>
+        </React.Fragment>
         )
     }
 }

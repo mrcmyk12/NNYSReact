@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Nav, NavbarToggler, Collapse, NavItem, Navbar, Button} from 'reactstrap';
+import { Nav, NavbarToggler, Collapse, NavItem, Navbar } from 'reactstrap';
 import { NavLink } from 'react-router-dom';
 import Register from './RegisterComponent';
 import Login from './LoginComponent';

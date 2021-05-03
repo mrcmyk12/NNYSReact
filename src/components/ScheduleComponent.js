@@ -1,8 +1,17 @@
 import React, { Component } from 'react';
 
 import { SCHEDULE } from '../shared/schedule';
-import { Card, CardHeader, CardTitle, CardBody, Container} from 'reactstrap';
+import { Card, CardTitle, CardBody} from 'reactstrap';
 import { Link} from 'react-router-dom';
+import { slideInDown } from 'react-animations';
+import Radium, { StyleRoot } from 'radium';
+
+const styles = {
+    slideInDown: {
+      animation: 'x 1s',
+      animationName: Radium.keyframes(slideInDown, 'slideInDown')
+    }
+  }
 
 
 
@@ -24,7 +33,7 @@ class Schedule extends Component {
         const calendar = this.state.schedule.map((schedules) => {
         
         return(
-        <React.Fragment>
+        <StyleRoot style={styles.slideInDown}>
             <div className="container" key={schedules.id}>
                 <div className="row center_text">
                     <h2 className='sport_card_title mt-1 ml-2'>{schedules.name}</h2>
@@ -102,20 +111,20 @@ class Schedule extends Component {
                     })}             
                 </Card>
             </div>                         
-        </React.Fragment>
+        </StyleRoot>
         )
     })
 
     
 
         return(
-            <React.Fragment>
+            <StyleRoot style={styles.slideInDown}>
            <div className="container">
                 <div className='row'>
                     {calendar} 
                 </div>
             </div> 
-            </React.Fragment>
+            </StyleRoot>
         )
 
         

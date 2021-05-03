@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Card, CardImg, CardHeader, CardTitle, CardBody, Button, Modal, ModalHeader,
-    ModalBody, ModalFooter } from 'reactstrap';
+import { Card, CardImg, CardTitle } from 'reactstrap';
 import RenderModal from './RenderModalComponent';
 import { bounceInRight } from 'react-animations';
 import Radium, { StyleRoot } from 'radium';
