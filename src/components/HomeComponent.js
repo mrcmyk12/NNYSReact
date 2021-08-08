@@ -116,8 +116,8 @@ const items = [
   
     return (
     <React.Fragment>
-      <Card>
-        <CardBody>
+      <div className='container mb-5'>
+          <div className='row'>
             <div className="col" >
             <Carousel 
                 activeIndex={activeIndex}
@@ -130,9 +130,12 @@ const items = [
                 <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
             </Carousel>
             </div> 
+            <div className='col'>
             <RenderParagraph />
-        </CardBody>       
-    </Card>
+            </div>
+            </div>
+            </div>
+  
 </React.Fragment>
       
     );

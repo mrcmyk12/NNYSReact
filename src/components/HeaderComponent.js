@@ -51,11 +51,7 @@ class Header extends Component {
                                             <h5 className='nav-listing'>Sports</h5>
                                         </NavLink>
                                     </NavItem>
-                                    <NavItem>
-                                        <NavLink className="nav-link" to='/schedule'>
-                                            <h5 className='nav-listing'>Schedule</h5>
-                                        </NavLink>
-                                    </NavItem>
+                               
                                     <NavItem>
                                         <NavLink className="nav-link" to='/order'>
                                             <h5 className='nav-listing'>Order</h5>

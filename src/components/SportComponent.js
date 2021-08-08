@@ -53,7 +53,7 @@ class Sport extends Component {
 
         return (
         <StyleRoot style={styles.bounceInLeft}>       
-            <div className='row'>
+            <div className='row' style={{height:'400px'}} >
                 {sport}
             </div>        
         </StyleRoot> 
