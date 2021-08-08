@@ -53,7 +53,8 @@ class Baseball extends Component {
 								<CardImg
 									className="image_for_sport"
 									src={
-										process.env.PUBLIC_URL + `${baseball.image}`
+										// process.env.PUBLIC_URL + `${baseball.image}`
+										"/assets/images/3_4_TBall.jpg"
 									}></CardImg>
 								<CardBody className="body_description">
 									{baseball.description}
