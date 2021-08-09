@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/NNYSReact/static/css/main.aab67f52.chunk.css",
+    "main.js": "/NNYSReact/static/js/main.b416aa32.chunk.js",
+    "main.js.map": "/NNYSReact/static/js/main.b416aa32.chunk.js.map",
+    "runtime-main.js": "/NNYSReact/static/js/runtime-main.ce0f44e8.js",
+    "runtime-main.js.map": "/NNYSReact/static/js/runtime-main.ce0f44e8.js.map",
+    "static/css/2.f7babd51.chunk.css": "/NNYSReact/static/css/2.f7babd51.chunk.css",
+    "static/js/2.66d01de6.chunk.js": "/NNYSReact/static/js/2.66d01de6.chunk.js",
+    "static/js/2.66d01de6.chunk.js.map": "/NNYSReact/static/js/2.66d01de6.chunk.js.map",
+    "static/js/3.b70005ab.chunk.js": "/NNYSReact/static/js/3.b70005ab.chunk.js",
+    "static/js/3.b70005ab.chunk.js.map": "/NNYSReact/static/js/3.b70005ab.chunk.js.map",
+    "index.html": "/NNYSReact/index.html",
+    "static/css/2.f7babd51.chunk.css.map": "/NNYSReact/static/css/2.f7babd51.chunk.css.map",
+    "static/css/main.aab67f52.chunk.css.map": "/NNYSReact/static/css/main.aab67f52.chunk.css.map",
+    "static/js/2.66d01de6.chunk.js.LICENSE.txt": "/NNYSReact/static/js/2.66d01de6.chunk.js.LICENSE.txt",
+    "static/media/font-awesome.css": "/NNYSReact/static/media/fontawesome-webfont.f691f37e.woff",
+    "static/media/index.css": "/NNYSReact/static/media/montserrat-latin-900italic.efcaa0f6.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ce0f44e8.js",
+    "static/css/2.f7babd51.chunk.css",
+    "static/js/2.66d01de6.chunk.js",
+    "static/css/main.aab67f52.chunk.css",
+    "static/js/main.b416aa32.chunk.js"
+  ]
+}
