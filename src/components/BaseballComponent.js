@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 
+
 import {
 	Card,
 	CardTitle,
@@ -17,6 +18,7 @@ import {
 	Row
 } from "reactstrap";
 import { BASEBALLINFO } from "../shared/baseballleagueinfo";
+
 
 import { MONTH } from "../shared/month";
 
@@ -52,10 +54,7 @@ class Baseball extends Component {
 							<div className="col-5 mb-2 mt-2 ml-2">
 								<CardImg
 									className="image_for_sport"
-									src={
-										// process.env.PUBLIC_URL + `${baseball.image}`
-										"/assets/images/3_4_TBall.jpg"
-									}></CardImg>
+									src={baseball.image}></CardImg>
 								<CardBody className="body_description">
 									{baseball.description}
 									<Card className="mt-5">
